@@ -446,6 +446,8 @@ section {
     transition: all 0.4s ease;
     opacity: 0;
     transform: translateY(50px);
+    position: relative;   /* nuevo */
+    cursor: pointer;      /* nuevo */
 }
 
 .project-card.visible {
@@ -519,6 +521,8 @@ section {
 .project-links {
     display: flex;
     gap: 1rem;
+    position: relative;   /* nuevo */
+    z-index: 2;           /* nuevo */
 }
 
 .project-link {
@@ -533,6 +537,23 @@ section {
 
 .project-link:hover {
     color: var(--accent);
+}
+
+/* Tarjeta clickeable hacia la demo */
+.project-card.no-demo {
+    cursor: default;
+}
+
+.card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.card-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -4px;
+    border-radius: 20px;
 }
 
 /* ============================================
